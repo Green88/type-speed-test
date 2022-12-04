@@ -3,7 +3,7 @@ import TimerPanel from './TimerPanel';
 import TypeWriter from './TypeWriter';
 import Results from './Results';
 import { TypingContext } from '../utils/TypingContext';
-import { Stats } from '../types';
+import { Stats } from '../utils/types';
 import './Main.scss';
 
 

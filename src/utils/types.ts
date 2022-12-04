@@ -1,8 +1,3 @@
-export type ResultsProps = {
-    correct: string[];
-    incorrect: string[];
-};
-
 export type Stats = {
     correct: string[];
     incorrect: string[];
