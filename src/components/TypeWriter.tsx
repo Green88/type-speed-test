@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, useContext } from 'react';
+import React, { useEffect, useState, useMemo, useContext, useRef } from 'react';
 import { getWordBank } from '../utils/word-bank';
 import { TypingContext } from '../utils/TypingContext';
 import CurrentWord from './CurrentWord';
@@ -8,11 +8,18 @@ const isWordCorrect = (userInput: string, word: string) => userInput.toLowerCase
 
 const TypeWriter = () => {
     const words = useMemo(() => getWordBank(), []);
+    const inputRef = useRef<HTMLInputElement>(null);
     const [userInput, setUserInput] = useState<string>('');
     const [currentWordIndex, setCurrentWordIndex] = useState<number>(0);
     const [correctWords, setCorrectWords] = useState<string[]>([]);
     const [incorrectWords, setIncorrectWords] = useState<string[]>([]);
     const {isStartedTyping, setIsStartedTyping, setStats} = useContext(TypingContext);
+
+    useEffect(() => {
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, []);
     
     const onKeyDown = (evt: React.KeyboardEvent<HTMLInputElement>) => {
         if (!isStartedTyping) {
@@ -56,7 +63,8 @@ const TypeWriter = () => {
                 type="text" 
                 value={userInput} 
                 onChange={(evt) => setUserInput(evt.target.value)} 
-                onKeyDown={onKeyDown} 
+                onKeyDown={onKeyDown}
+                ref={inputRef} 
             />
         </section>
     );
