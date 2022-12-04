@@ -38,7 +38,6 @@ const TypeWriter = () => {
     };
 
     useEffect(() => {
-        console.log('useEffect on isTimerStopped');
         setStats({correct: correctWords, incorrect: incorrectWords});
     }, [correctWords, incorrectWords, setStats]);
 
