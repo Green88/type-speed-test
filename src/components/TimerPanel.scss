@@ -1,0 +1,25 @@
+.timer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0;
+    font-size: 24px;
+
+    .start-btn {
+        height: 40px;
+        font-size: 20px;
+        background-color: #ebe6e6;
+        border: 2px solid lightgray;
+        border-radius: 6px;
+        &:hover {
+            background-color: lightgrey;
+            transition: background-color 500ms linear;
+        }
+    }
+    .time-run {
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+}

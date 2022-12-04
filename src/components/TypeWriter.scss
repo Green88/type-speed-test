@@ -1,0 +1,47 @@
+.type-writer {
+    border: 2px solid lightgray;
+    border-radius: 4px;
+
+    input {
+		height: 50px;
+        width: 100%;
+		font-size: 24px;
+        text-align: center;
+        outline: none;
+        padding: 0;
+        border: none;
+        border-top: 2px solid lightgray;
+	}
+
+	.words-container {
+		font-size: 24px;
+        padding: 12px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        background-color: #ebe6e6;
+    
+        .word {
+            padding: 0 2px 4px 2px;
+            border-radius: 4px;
+        }
+
+        .correct {
+            color: blue;
+        }
+        .incorrect {
+            color: red;
+        }
+        .current {
+            display: flex;
+            align-items: center;
+            background-color: #b8e069;
+        }
+
+        .char {
+            &.correct {
+                color: white;
+            } 
+        }
+	}
+}
